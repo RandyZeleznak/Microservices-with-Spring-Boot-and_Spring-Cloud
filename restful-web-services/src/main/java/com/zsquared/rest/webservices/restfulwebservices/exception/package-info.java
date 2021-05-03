@@ -1,0 +1,1 @@
+package com.zsquared.rest.webservices.restfulwebservices.exception;
