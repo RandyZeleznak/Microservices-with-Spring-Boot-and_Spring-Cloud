@@ -45,11 +45,7 @@ public class UserResource {
 		WebMvcLinkBuilder linkTo = 
 				linkTo(methodOn(this.getClass()).retrieveAllUsers());
 		
-		resource.add(linkTo.withRel("all-users"));
-		
-
-		
-		
+		resource.add(linkTo.withRel("all-users"));	
 		
 		return resource;
 	}

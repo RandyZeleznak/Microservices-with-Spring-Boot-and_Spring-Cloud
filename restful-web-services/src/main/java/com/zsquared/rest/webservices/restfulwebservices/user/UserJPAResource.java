@@ -6,10 +6,10 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
-import javax.annotation.Resource;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,14 +37,14 @@ public class UserJPAResource {
 	
 	// Retrieve user with id
 	@GetMapping("/jpa/users/{id}")
-	public Resource<User> retrieveUser(@PathVariable int id) {
+	public EntityModel<User> retrieveUser(@PathVariable int id) {
 		Optional<User> user = userRepository.findById(id);
 		if(!user.isPresent())
 			throw new UserNotFoundException("id-"+id);
 		
 		//"all-users", SERVER_PATH + "/users"
 		//retrieveALLUSERS
-		Resource<user> resource = new Resource<user>(user.get());
+		EntityModel<User> resource = EntityModel.of(user.get());
 		
 		WebMvcLinkBuilder linkTo = 
 				linkTo(methodOn(this.getClass()).retrieveAllUsers());
