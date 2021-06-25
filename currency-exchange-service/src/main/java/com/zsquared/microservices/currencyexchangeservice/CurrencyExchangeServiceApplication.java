@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
-@EnableDiscoveryClient
 public class CurrencyExchangeServiceApplication {
 
 	public static void main(String[] args) {
