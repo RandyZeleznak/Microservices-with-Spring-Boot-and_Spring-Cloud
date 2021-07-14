@@ -2,23 +2,23 @@ package com.zsquared.microservices.currencyconversionservice;
 
 import java.math.BigDecimal;
 
-public class CurrencyConversionBean {
+public class CurrencyConversion {
 	private Long id;
 	private String from;
 	private String to;
 	private BigDecimal conversionMultiple;
 	private BigDecimal quantity;
 	private BigDecimal totalCalculatedAmount;
-	private int port;
+	private String environment;
 	
 	
-	public CurrencyConversionBean() {
+	public CurrencyConversion() {
 		
 	}
 	
 	
-	public CurrencyConversionBean(Long id, String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
-			BigDecimal totalCalculatedAmount, int port) {
+	public CurrencyConversion(Long id, String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
+			BigDecimal totalCalculatedAmount, String environment) {
 		super();
 		this.id = id;
 		this.from = from;
@@ -26,7 +26,7 @@ public class CurrencyConversionBean {
 		this.conversionMultiple = conversionMultiple;
 		this.quantity = quantity;
 		this.totalCalculatedAmount = totalCalculatedAmount;
-		this.port = port;
+		this.environment = environment;
 	}
 	
 	
@@ -66,11 +66,11 @@ public class CurrencyConversionBean {
 	public void setTotalCalculatedAmount(BigDecimal totalCalculatedAmount) {
 		this.totalCalculatedAmount = totalCalculatedAmount;
 	}
-	public int getPort() {
-		return port;
+	public String getEnvironment() {
+		return environment;
 	}
-	public void setPort(int port) {
-		this.port = port;
+	public void setEnvironment(String environment) {
+		this.environment = environment;
 	}
 	
 	
